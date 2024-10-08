@@ -43,8 +43,11 @@ Antes de começar, você precisa ter o seguinte instalado na sua máquina:
 ## Executando o Projeto
 
 Para executar a aplicação, siga os passos abaixo:
-
-1. **Construa e inicie os containers:**
+1. **Acesse a Pasta Backend e Frontend** e rode
+   ```bash 
+      npm install
+      ```
+2. **Construa e inicie os containers:**
 No diretório raiz do projeto, execute o seguinte comando:
 
 ```bash

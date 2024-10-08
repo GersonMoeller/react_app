@@ -14,6 +14,7 @@ Antes de começar, você precisa ter o seguinte instalado na sua máquina:
 1. **Crie um arquivo `.env`:**
    Certifique-se de que o arquivo `.env` esteja no diretório raiz do projeto, com as seguintes variáveis de ambiente:
 
+   **Dados Fictícios**
    ```env
    # Chave para Geração de token JWT
    SECRET_KEY='ed5d0eb76e7c6ae9d927bd515d6fb9c4e8271942faeb00ae116ae9923569b3d3'
@@ -46,4 +47,4 @@ No diretório raiz do projeto, execute o seguinte comando:
 docker-compose up --build -d
 
 ```
-Pronto ! Agora só acessar http://localhost:${NGINX_PORT}
+**Pronto ! Agora só acessar http://localhost:${NGINX_PORT}**

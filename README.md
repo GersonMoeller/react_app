@@ -8,9 +8,13 @@ Antes de começar, você precisa ter o seguinte instalado na sua máquina:
 
 - [Docker](https://www.docker.com/get-started)
 - [Docker Compose](https://docs.docker.com/compose/)
+- [GIT](https://git-scm.com/book/ms/v2/Getting-Started-First-Time-Git-Setup)
 
 ## Configuração
-
+1. **Faça o Clone do Código** 
+   ```bash
+      git clone https://github.com/GersonMoeller/react_app.git
+      ```
 1. **Crie um arquivo `.env`:**
    Certifique-se de que o arquivo `.env` esteja no diretório raiz do projeto, com as seguintes variáveis de ambiente:
 

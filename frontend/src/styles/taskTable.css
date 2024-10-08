@@ -1,0 +1,145 @@
+/* Estilo para o contêiner da tabela */
+.table-container {
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    background-color: #fafafa;
+    padding: 20px;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+/* Estilo para a tabela */
+#taskTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+#taskTable thead {
+    background-color: #007bff;
+    color: white;
+}
+
+#taskTable th,
+#taskTable td {
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    text-align: left;
+    vertical-align: middle;
+}
+
+#taskTable tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Organizar os botões lado a lado */
+#taskTable tbody td .action-buttons {
+    display: flex;
+    gap: 10px; /* Espaço entre os botões */
+}
+
+.edit-btn,
+.delete-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #28a745; 
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 13px;
+    transition: background-color 0.3s ease;
+}
+
+.delete-btn {
+    background-color: #dc3545; 
+}
+
+.edit-btn:hover {
+    background-color: #218838;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+/* Estilo para as linhas com base no status */
+#taskTable tbody tr[data-status="Pendente"] {
+    background-color: #fff3cd;
+}
+
+#taskTable tbody tr[data-status="Concluída"] {
+    background-color: #d4edda;
+}
+
+#taskTable tbody tr[data-status="Em andamento"] {
+    background-color: #cce5ff;
+}
+
+/* Estilo para os filtros */
+.filters {
+    display: flex;
+    justify-content: center; /* Centraliza os filtros */
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 15px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.filters label {
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-weight: bold;
+}
+
+.filters select,
+.filters input[type="date"] {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    transition: border-color 0.2s ease;
+}
+
+.filters select:focus,
+.filters input[type="date"]:focus {
+    border-color: #80bdff;
+    outline: none;
+}
+
+/* Melhorias para dispositivos móveis */
+@media (max-width: 768px) {
+    #taskTable thead {
+        display: none;
+    }
+
+    #taskTable tbody tr {
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    #taskTable tbody td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    #taskTable tbody td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        flex-basis: 40%;
+        text-align: left;
+    }
+}

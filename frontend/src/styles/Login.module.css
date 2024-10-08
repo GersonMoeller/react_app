@@ -1,0 +1,72 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f2f5;
+  }
+  
+  .loginBox {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  .inputGroup {
+    margin-bottom: 20px;
+  }
+  
+  .input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+  }
+  
+  .input:focus {
+    outline: none;
+    border-color: #6c63ff;
+  }
+  
+  .loginButton {
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .loginButton:hover {
+    background-color: #5a52e0;
+  }
+  
+  .links {
+    margin-top: 20px;
+  }
+  
+  .forgotPassword, .signUp {
+    font-size: 14px;
+    color: #6c63ff;
+    text-decoration: none;
+  }
+  
+  .forgotPassword:hover, .signUp:hover {
+    text-decoration: underline;
+  }
+  

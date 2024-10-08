@@ -1,0 +1,60 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - ./db_data:/var/lib/postgresql/data
+    networks:
+      - my_network
+    ports:
+      - ${POSTGRES_EXT_PORT}:5432
+  backend:
+    build: ./backend
+    command: sh -c "npm run seed && npm start"
+    volumes:
+      - ./backend:/usr/src/app
+      - ./.env:/usr/src/app/.env
+    depends_on:
+      - postgres
+    environment:
+      - DB_HOST=postgres          # Nome do serviço do banco de dados
+      - DB_USER=${POSTGRES_USER}
+      - DB_PASS=${POSTGRES_PASSWORD}
+      - DB_NAME=${POSTGRES_DB}
+    networks:
+      - my_network
+    expose:
+      - 5000
+    mem_limit: 2g
+    cpus: 2
+
+  frontend:
+    build: ./frontend
+    volumes:
+      - ./frontend:/usr/src/app
+      - ./.env:/usr/src/app/.env
+    expose:
+      - 3000
+    depends_on:
+      - backend
+    networks:
+      - my_network
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "${NGINX_PORT}:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - frontend
+      - backend
+    networks:
+      - my_network
+networks:
+  my_network:
+    driver: bridge  # O driver padrão, mas pode ser especificado se necessário
